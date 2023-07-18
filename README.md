@@ -15,18 +15,24 @@ The application provides the following APIs:
 
 **`GET`** /api/v1/movies/{imdbId}: Fetches a movie by its ImdbId.
 
-**`POST`** /api/v1/reviews/addReview: Creates a review for a movie based on the ImdbId passed in the JSON body. Example request body:
+**`POST`** /api/v1/reviews/addReview: Creates a review for a movie based on the ImdbId passed in the JSON body.
 
 json body (Example)
-Copy code
+
 {
+
     "reviewBody": "what a amazing movie, I loved it!",
+    
     "imdbId": "tt8760708" 
+    
 }
 
 **`POST`** /api/v1/movies/addMovie: Adds a new movie to the database.
+
 json body (Example)
+
 {
+
     "imdbId": "tt10298840",
     "title": "Strange World",
     "releaseDate": "2022-11-23",
@@ -53,10 +59,15 @@ json body (Example)
     "reviewIds": []
   }
 
-**`PUT`** /api/v1/reviews/updateReview/{objectId}: Updates a review of a movie by passing the objectId of that movie. Example request json body: (Example)
+**`PUT`** 
+/api/v1/reviews/updateReview/{objectId}: Updates a review of a movie by passing the objectId of that movie. 
+
+json body (Example)
 {
+
     "id": "64975ee5ba5bc62639a14a1e",
     "reviewMessage": "Never seen a movie like this before!"
+
 }
 
 **`DELETE`** /api/v1/movies/{objectId}: Deletes a movie by its objectId.
@@ -64,22 +75,35 @@ json body (Example)
 **`DELETE`** /api/v1/reviews/{objectId}: Deletes a review of a movie by its objectId.
 
 **`Database`**
--> The application uses MongoDB as its database. The necessary credentials to communicate with MongoDB are listed in the .env file in the project root directory. An example of this file, env.example, is included in the project.
+-> The application uses MongoDB as its database. 
+
+-> The necessary credentials to communicate with MongoDB are listed in the .env file in the project root directory. 
+
+-> An example of this file, env.example, is included in the project.
 
 **`Data`**
--> The project includes a movies.json file under the data folder (which lies under resources). This file contains data about movies and their reviews.
+-> The project includes a movies.json file under the data folder (which lies under resources). 
+
+-> This file contains data about movies and their reviews.
 
 **`Dependencies`**
 -> The project uses Java 17 and Spring Boot 3.1.1. Other dependencies include:
 
-Spring Boot Starter Data MongoDB
-Spring Boot Starter Web
-Spring Boot DevTools
-Lombok
-Spring Boot Starter Test
-Spring Dotenv 2.5.4
-These dependencies can be found in the pom.xml file in the project root directory.
+- Spring Boot Starter Data MongoDB
+
+- Spring Boot Starter Web
+
+- Spring Boot DevTools
+
+- Lombok
+
+- Spring Boot Starter Test
+
+- Spring Dotenv 2.5.4
+
+*`These dependencies can be found in the pom.xml file in the project root directory.`*
 
 **`How to Run`**
 -> You can either use command: mvn spring-boot:run or run the application using the main spring-boot-application file.
+
 -> I tested the API's using POSTMAN, but you can test API's with any tools you may like.
